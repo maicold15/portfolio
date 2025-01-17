@@ -22,17 +22,31 @@ function Projects() {
         "Node.js",
         "Express.js",
         "MongoDB",
-        "Vercel",
       ],
     },
     {
-      // Proyecto vacío para que lo llenes luego
-      title: "My Second Project",
-      description: "Project description goes here",
-      image: "https://via.placeholder.com/300x200",
-      link: "http://example.com",
-      technologies: [],
-    },
+      title: "UniMobility",
+      description: `
+        UniMobility es una plataforma web diseñada para la gestión de estacionamientos de bicicletas en campus universitarios. 
+        Proporciona al administrador una vista en tiempo real de los espacios disponibles, ocupados y el flujo de tráfico de personas mediante sensores de presencia. 
+        Permite registrar y rastrear el uso de las bicicletas mediante la lectura de carnés o IDs estudiantiles, almacenando información como la fecha y hora de uso. 
+        Además, facilita la generación de reportes automáticos para optimizar y mejorar los servicios ofrecidos en la zona común.
+      `,
+      image: "/images/ProjectsImages/unimobility.png",
+      link: "http://example.com", // Sustituir por el enlace real
+      technologies: [
+        "React.js",
+        "Bootstrap",
+        "CSS3",
+        "JavaScript ES6",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Arduino",
+        "ESP32",
+        "Sensores de Presencia",
+      ],
+    },    
   ];
 
   return (

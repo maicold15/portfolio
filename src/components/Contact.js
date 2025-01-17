@@ -12,7 +12,7 @@ function Contact() {
   // Información de contacto (ajusta tus datos reales)
   const phone = "+57 312 694 9134";
   const email = "mdflorezalvear@gmail.com";
-  const linkedin = "maicolflorez";
+  const linkedin = "Maicol Florez";
 
   // Estado para mostrar u ocultar el formulario
   const [showForm, setShowForm] = useState(false);
