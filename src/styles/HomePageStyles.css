@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.homepage-container {
+  margin-top: 80px; /* Para que no quede detrás del navbar si éste no es fijo */
+  font-family: "Montserrat", sans-serif;
+  background-color: #f7f9fc;
+  padding: 40px;
+  color: #333;
+}
+
+/* Contenedor principal con dos columnas */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px; /* Espacio horizontal entre columnas */
+}
+
+/* =======================
+   SECCIÓN IZQUIERDA
+   ======================= */
+.left-section {
+  width: 50%;
+  text-align: justify;
+}
+
+.name {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #1a202c;
+  margin-bottom: 10px;
+}
+
+.engineer-title {
+  font-size: 1.4rem;
+  color: #2b6cb0;
+  margin-bottom: 5px;
+}
+
+.stack-title {
+  font-size: 1.2rem;
+  color: #718096;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 675px;
+}
+
+/* =======================
+   Tecnologías
+   ======================= */
+.technologies-container {
+  background-color: #e2e8f0;
+  padding: 15px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.technologies-title {
+  font-size: 1.2rem;
+  color: #1a202c;
+  margin-bottom: 10px;
+}
+
+/* Fila única (scroll horizontal si hay muchas) */
+.technologies-icons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.tech-icon {
+  padding: 8px 15px;
+  background-color: #ffffff;
+  color: #2d3748;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.tech-icon:hover {
+  background-color: #2b6cb0;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* =======================
+   SECCIÓN DERECHA
+   ======================= */
+.right-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  border: 4px solid #2b6cb0;
+  margin-bottom: 20px;
+}
+
+/* Redes sociales */
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: #2b6cb0;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+
+/* Para pantallas de hasta 768px: uso de columnas en una sola fila */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Apila las secciones una debajo de la otra */
+    align-items: center; /* Centra horizontalmente */
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%; /* Ocupan todo el ancho */
+    text-align: center; /* Alinea el texto al centro si lo prefieres en móvil */
+    margin-bottom: 20px; /* Espacio entre secciones */
+  }
+
+  .name {
+    font-size: 2rem; /* Ajusta tamaños para pantallas más pequeñas */
+  }
+
+  .engineer-title {
+    font-size: 1.2rem;
+  }
+
+  .stack-title {
+    font-size: 1.1rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+    max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 200px; /* Ajusta el tamaño si lo deseas */
+    margin-bottom: 20px;
+  }
+}
+
+/* Para pantallas aún más pequeñas, por ejemplo 480px */
+@media (max-width: 480px) {
+  .name {
+    font-size: 1.8rem;
+  }
+  .engineer-title {
+    font-size: 1.1rem;
+  }
+  .stack-title {
+    font-size: 1rem;
+  }
+}

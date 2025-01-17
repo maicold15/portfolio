@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.contact-section {
+  font-family: "Montserrat", sans-serif;
+  padding: 60px 10%;
+  background-color: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Animación de aparición */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #2b6cb0;
+  margin-bottom: 30px;
+}
+
+/* Tarjeta de información de contacto */
+.contact-info-card {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-info-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Filas de la tarjeta de contacto */
+.contact-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: #2b6cb0;
+}
+
+/* Mensaje de invitación */
+.contact-invitation {
+  font-size: 1rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Botón para mostrar/ocultar formulario */
+.toggle-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2b6cb0;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+.toggle-button:hover {
+  background-color: #1a202c;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+}
+
+/* Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  gap: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  /* Animación de despliegue */
+  animation: slideDown 0.4s ease forwards;
+}
+
+.contact-form label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2b6cb0;
+}
+
+.contact-form button {
+  align-self: flex-end;
+  padding: 10px 25px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2b6cb0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-form button:hover {
+  background-color: #1a202c;
+}
+
+/* Animaciones */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 1000px; /* Un valor grande para permitir que se expanda */
+  }
+}
+
+/* =========================
+   Responsividad
+   ========================= */
+@media (max-width: 768px) {
+  .contact-info-card {
+    padding: 15px 20px;
+  }
+  .contact-form {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-row span {
+    font-size: 0.9rem;
+  }
+  .contact-form button {
+    align-self: center;
+    width: 100%;
+  }
+  .toggle-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

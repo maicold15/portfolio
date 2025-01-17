@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.about-me-container {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f7f9fc;
+  padding: 60px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tarjeta principal */
+.about-me-card {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Animación de aparición */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Contenedor interno: imagen y texto en la misma fila */
+.about-me-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Imagen a la izquierda */
+.about-me-picture {
+  width: 200px;
+  height: 400px; /* Ajusta según quieras ver la imagen; podrías usar height:auto */
+  border-radius: 8%;
+  object-fit: cover;
+  border: 4px solid #2b6cb0;
+}
+
+/* Texto a la derecha */
+.about-me-text-block {
+  flex: 1;
+}
+
+/* Título principal */
+.about-me-title {
+  font-size: 1.8rem;
+  color: #2b6cb0;
+  margin-bottom: 15px;
+}
+
+/* Texto genérico */
+.about-me-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Hover suave en la tarjeta */
+.about-me-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+}
+
+/* Animación fadeUp */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   Responsividad
+   ====================== */
+@media (max-width: 768px) {
+  /* Cambia la distribución a columnas */
+  .about-me-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ajusta el tamaño y posición de la imagen */
+  .about-me-picture {
+    width: 220px; /* Ajusta el ancho en pantallas pequeñas */
+    height: auto; /* Evita deformar la imagen */
+    margin-bottom: 20px;
+  }
+
+  /* Centra el texto */
+  .about-me-text-block {
+    text-align: center;
+  }
+
+  /* Ajusta el tamaño de los textos */
+  .about-me-title {
+    font-size: 1.4rem;
+  }
+
+  .about-me-text {
+    font-size: 0.95rem;
+    text-align: center; /* Podrías dejarlo en justify si prefieres */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-title {
+    font-size: 1.2rem;
+  }
+  .about-me-picture {
+    width: 180px;
+  }
+  .about-me-text {
+    font-size: 0.9rem;
+  }
+}
