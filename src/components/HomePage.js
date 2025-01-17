@@ -35,6 +35,8 @@ function HomePage() {
               <span className="tech-icon">CSS</span>
               <span className="tech-icon">JavaScript</span>
               <span className="tech-icon">React</span>
+              <span className="tech-icon">Vue.js</span>
+              <span className="tech-icon">Laravel</span>
               <span className="tech-icon">Node.js</span>
               <span className="tech-icon">Git</span>
             </div>
@@ -46,7 +48,7 @@ function HomePage() {
           <img src={profilePic} alt="Profile" className="profile-pic" />
           <div className="social-links">
             <a
-              href="https://linkedin.com/in/your-linkedin"
+              href="https://www.linkedin.com/in/maicol-florez-425416342/"
               target="_blank"
               rel="noopener noreferrer"
             >
