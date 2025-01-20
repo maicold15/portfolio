@@ -31,14 +31,14 @@ function HomePage() {
           <div className="technologies-container">
             <h4 className="technologies-title">Technologies I Use</h4>
             <div className="technologies-icons">
-              <span className="tech-icon">HTML</span>
-              <span className="tech-icon">CSS</span>
-              <span className="tech-icon">JavaScript</span>
               <span className="tech-icon">React</span>
               <span className="tech-icon">Vue.js</span>
               <span className="tech-icon">Laravel</span>
               <span className="tech-icon">Node.js</span>
               <span className="tech-icon">Git</span>
+              <span className="tech-icon">HTML</span>
+              <span className="tech-icon">CSS</span>
+              <span className="tech-icon">JavaScript</span>
             </div>
           </div>
         </div>
