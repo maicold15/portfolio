@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/NavbarStyles.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,16 +25,24 @@ function Navbar() {
       {/* Enlaces de navegación */}
       <ul className={isOpen ? "navbar-links active" : "navbar-links"}>
         <li>
-          <a href="#home">Home</a>
+          <Link to="/" onClick={handleToggle}>
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#about-me">About Me</a>
+          <Link to="/projects" onClick={handleToggle}>
+            Projects
+          </Link>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <Link to="/about" onClick={handleToggle}>
+            About Me
+          </Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link to="/contact" onClick={handleToggle}>
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>

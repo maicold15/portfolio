@@ -1,125 +1,169 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-.about-me-container {
-  font-family: "Montserrat", sans-serif;
-  background-color: #f7f9fc;
-  padding: 60px 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ===================
+   ANIMACIÓN "WIPE DOWN"
+   =================== */
+@keyframes wipe-in-down {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
-/* Tarjeta principal */
-.about-me-card {
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  max-width: 900px;
+[transition-style="in:wipe:down"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
+}
+
+/* ===================
+   CONTENEDOR PRINCIPAL
+   =================== */
+#about-me-screen {
+  height: 100vh; /* Ocupa toda la ventana */
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  /* Animación de aparición */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-/* Contenedor interno: imagen y texto en la misma fila */
-.about-me-content {
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 30px;
+  flex-direction: column; /* footer irá abajo */
+  overflow: hidden;       /* Sin scroll vertical */
+  background-color: #0f172a;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Contenido Principal */
+.about-me-screen-content {
+  flex: 1; /* Ocupa el espacio intermedio */
+  display: flex; /* Imagen izquierda, texto derecha */
   align-items: center;
+  justify-content: space-around; /* Separa imagen y texto */
+  padding: 0 5%; /* Espacio horizontal */
+  position: relative;
 }
 
-/* Imagen a la izquierda */
-.about-me-picture {
-  width: 200px;
-  height: 400px; /* Ajusta según quieras ver la imagen; podrías usar height:auto */
-  border-radius: 8%;
-  object-fit: cover;
-  border: 4px solid #2b6cb0;
-}
-
-/* Texto a la derecha */
-.about-me-text-block {
+/* Sección Izquierda: Imagen */
+.about-me-screen-left {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Título principal */
-.about-me-title {
-  font-size: 1.8rem;
-  color: #2b6cb0;
+.about-me-screen-image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.about-me-screen-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2; /* Foto por encima del efecto de luz */
+}
+
+/* Efecto de luz */
+.about-me-screen-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+  z-index: 1;
+  animation: aboutScreenPulse 2s infinite;
+}
+
+/* Sección Derecha: Texto */
+.about-me-screen-right {
+  flex: 2;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 750px;
+}
+
+/* Título con clamp para no invadir la imagen en pantallas pequeñas */
+.about-me-screen-title {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;  
+  color: #60a5fa;
   margin-bottom: 15px;
 }
 
-/* Texto genérico */
-.about-me-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #4a5568;
+/* Párrafos con clamp para evitar overflow */
+.about-me-screen-paragraph {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #e5e7eb;
   text-align: justify;
-  margin-bottom: 15px;
 }
 
-/* Hover suave en la tarjeta */
-.about-me-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: scale(1.01);
+/* Footer al final */
+.about-me-screen-footer {
+  width: 100%;
+  background-color: #0f172a;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* No se contrae */
 }
 
-/* Animación fadeUp */
-@keyframes fadeUp {
+/* Efecto de pulso */
+@keyframes aboutScreenPulse {
   0% {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
+    opacity: 0.8;
   }
 }
 
-/* ======================
-   Responsividad
-   ====================== */
+/* ==================
+   RESPONSIVIDAD
+   ================== */
 @media (max-width: 768px) {
-  /* Cambia la distribución a columnas */
-  .about-me-content {
-    flex-direction: column;
-    align-items: center;
+  .about-me-screen-content {
+    flex-direction: column; /* Imagen arriba, texto abajo */
+    justify-content: center;
+    padding: 0 2%;
   }
 
-  /* Ajusta el tamaño y posición de la imagen */
-  .about-me-picture {
-    width: 220px; /* Ajusta el ancho en pantallas pequeñas */
-    height: auto; /* Evita deformar la imagen */
-    margin-bottom: 20px;
+  .about-me-screen-image-container {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 10px;
   }
 
-  /* Centra el texto */
-  .about-me-text-block {
-    text-align: center;
-  }
-
-  /* Ajusta el tamaño de los textos */
-  .about-me-title {
-    font-size: 1.4rem;
-  }
-
-  .about-me-text {
-    font-size: 0.95rem;
-    text-align: center; /* Podrías dejarlo en justify si prefieres */
+  .about-me-screen-right {
+    max-width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-  .about-me-title {
-    font-size: 1.2rem;
-  }
-  .about-me-picture {
+  .about-me-screen-image-container {
     width: 180px;
+    height: 180px;
   }
-  .about-me-text {
-    font-size: 0.9rem;
+
+  .about-me-screen-title {
+    font-size: clamp(1rem, 5vw, 1.5rem);
   }
 }

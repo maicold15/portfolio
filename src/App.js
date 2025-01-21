@@ -1,25 +1,29 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import "./styles/App.css";
 
 function App() {
   return (
-    <div className="app-container">
-      <Navbar />
-
-      <main>
-        <HomePage />
-        <AboutMe />
-        <Projects />
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
+    <Router>
+      <div className="app-container">
+        {/* Navbar estará visible en todas las páginas */}
+        <Navbar />
+        <main>
+          <Routes>
+            {/* Rutas para cada página */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 

@@ -6,8 +6,11 @@ function HomePage() {
   const profilePic = "/images/perfil1.PNG";
 
   return (
-    /* Agregamos un id="home" para que la sección "Home" ancle correctamente */
-    <div id="home" className="homepage-container">
+    <div
+      id="home"
+      className="homepage-container"
+      transition-style="in:wipe:top-right"
+    >
       <div className="main-content">
         {/* Columna izquierda: Títulos, descripción, tecnologías */}
         <div className="left-section">
@@ -31,14 +34,47 @@ function HomePage() {
           <div className="technologies-container">
             <h4 className="technologies-title">Technologies I Use</h4>
             <div className="technologies-icons">
-              <span className="tech-icon">React</span>
-              <span className="tech-icon">Vue.js</span>
-              <span className="tech-icon">Laravel</span>
-              <span className="tech-icon">Node.js</span>
-              <span className="tech-icon">Git</span>
-              <span className="tech-icon">HTML</span>
-              <span className="tech-icon">CSS</span>
-              <span className="tech-icon">JavaScript</span>
+              {/* Sustitución de textos por imágenes desde /public/images/icons */}
+              <img
+                src="/images/icons/react.png"
+                alt="React"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/vue.png"
+                alt="Vue.js"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/laravel.png"
+                alt="Laravel"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/node.png"
+                alt="Node.js"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/git.png"
+                alt="Git"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/html.png"
+                alt="HTML"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/css.png"
+                alt="CSS"
+                className="tech-icon-img"
+              />
+              <img
+                src="/images/icons/js.png"
+                alt="JavaScript"
+                className="tech-icon-img"
+              />
             </div>
           </div>
         </div>
@@ -64,6 +100,13 @@ function HomePage() {
           </div>
         </div>
       </div>
+      
+      {/* Footer integrado */}
+      <footer className="footer-container">
+        <p>
+          Created by <strong>Maicol Florez</strong> | All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }

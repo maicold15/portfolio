@@ -7,31 +7,37 @@
 }
 
 .navbar-container {
+  /* Mantener fijo en la parte superior */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  /* Capa por encima de otros elementos */
   z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2c3e50;
+  background-color: #0f172a;
+  /* Espaciado interno */
   padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* Sombra sutil para separarlo un poco del contenido */
+  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/
   font-family: "Montserrat", sans-serif;
 }
 
 /* Logo */
 .navbar-logo h2 {
-  color: #ecf0f1;
+  color: #ffffff;
   margin: 0;
+  font-size: 1.4rem; /* Ajusta según necesites */
+  font-weight: bold;
 }
 
-/* Menú hamburguesa (hidden en desktop) */
+/* Menú hamburguesa (oculto en desktop) */
 .menu-icon {
   display: none;
   font-size: 1.8rem;
-  color: #ecf0f1;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -45,17 +51,17 @@
 
 /* Estilos de los enlaces */
 .navbar-links li a {
-  color: #ecf0f1;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s, padding-left 0.3s;
-  padding: 6px 8px; /* Espacio interior en desktop */
+  padding: 6px 8px;
   border-radius: 4px;
 }
 
 .navbar-links li a:hover {
-  background-color: #34495e; /* Color de fondo al hover */
-  color: #ecf0f1; /* Ajusta si quieres diferenciar más */
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
   padding-left: 14px; /* Sutil desplazamiento al hover */
 }
 
@@ -68,21 +74,20 @@
     display: block;
   }
 
-  /* Oculta la lista inicial y la sitúa fuera de la pantalla */
+  /* Oculta la lista inicialmente */
   .navbar-links {
     position: absolute;
     top: 60px; /* Debajo de la barra */
     left: -100%;
     flex-direction: column;
     width: 100%;
-    background-color: #2c3e50;
+    background-color: #0f172a;
     gap: 15px;
-    /* Agregamos padding para que no queden pegados al borde */
     padding: 30px 20px;
-    transition: left 0.4s ease; /* Animación suave al abrir/cerrar */
+    transition: left 0.4s ease;
   }
 
-  /* Cuando está activo, se muestra completamente */
+  /* Cuando está activo, se muestra */
   .navbar-links.active {
     left: 0;
   }
